@@ -1,0 +1,25 @@
+{"timestamp": "2026-10-18T20:52:36.607", "ciclo": 1, "evento": "percepcion", "n_clientes": 1809}
+{"timestamp": "2026-10-18T20:52:36.658", "ciclo": 1, "evento": "decision", "n_elegidos": 18, "prob_min": 0.9413, "prob_media": 0.9498}
+{"timestamp": "2026-10-18T20:52:37.095", "ciclo": 1, "evento": "accion", "n_enviados": 18, "n_alcanzados": 16}
+{"timestamp": "2026-10-18T20:52:37.468", "ciclo": 1, "evento": "critica", "n_alcanzados": 16, "brier": 0.1697, "sesgo_prob": 0.137}
+{"timestamp": "2026-10-18T20:52:44.766", "ciclo": 1, "evento": "aprendizaje", "conversion": 0.8125, "reentrenado": true, "n_entrenamiento": 36184}
+{"timestamp": "2026-10-18T20:52:44.782", "ciclo": 2, "evento": "percepcion", "n_clientes": 1809}
+{"timestamp": "2026-10-18T20:52:45.362", "ciclo": 2, "evento": "decision", "n_elegidos": 18, "prob_min": 0.9323, "prob_media": 0.936}
+{"timestamp": "2026-10-18T20:52:45.366", "ciclo": 2, "evento": "accion", "n_enviados": 18, "n_alcanzados": 18}
+{"timestamp": "2026-10-18T20:52:46.014", "ciclo": 2, "evento": "critica", "n_alcanzados": 18, "brier": 0.2467, "sesgo_prob": 0.2137}
+{"timestamp": "2026-10-18T20:52:49.548", "ciclo": 2, "evento": "aprendizaje", "conversion": 0.7222, "reentrenado": true, "n_entrenamiento": 36202}
+{"timestamp": "2026-10-18T20:52:49.573", "ciclo": 3, "evento": "percepcion", "n_clientes": 1809}
+{"timestamp": "2026-10-18T20:52:49.605", "ciclo": 3, "evento": "decision", "n_elegidos": 18, "prob_min": 0.9417, "prob_media": 0.9468}
+{"timestamp": "2026-10-18T20:52:49.607", "ciclo": 3, "evento": "accion", "n_enviados": 18, "n_alcanzados": 15}
+{"timestamp": "2026-10-18T20:52:49.611", "ciclo": 3, "evento": "critica", "n_alcanzados": 15, "brier": 0.302, "sesgo_prob": 0.2805}
+{"timestamp": "2026-10-18T20:52:52.805", "ciclo": 3, "evento": "aprendizaje", "conversion": 0.6667, "reentrenado": true, "n_entrenamiento": 36217}
+{"timestamp": "2026-10-18T20:52:52.822", "ciclo": 4, "evento": "percepcion", "n_clientes": 1808}
+{"timestamp": "2026-10-18T20:52:52.862", "ciclo": 4, "evento": "decision", "n_elegidos": 18, "prob_min": 0.9385, "prob_media": 0.9481}
+{"timestamp": "2026-10-18T20:52:52.868", "ciclo": 4, "evento": "accion", "n_enviados": 18, "n_alcanzados": 16}
+{"timestamp": "2026-10-18T20:52:52.873", "ciclo": 4, "evento": "critica", "n_alcanzados": 16, "brier": 0.1133, "sesgo_prob": 0.0729}
+{"timestamp": "2026-10-18T20:52:57.971", "ciclo": 4, "evento": "aprendizaje", "conversion": 0.875, "reentrenado": true, "n_entrenamiento": 36233}
+{"timestamp": "2026-10-18T20:52:57.997", "ciclo": 5, "evento": "percepcion", "n_clientes": 1808}
+{"timestamp": "2026-10-18T20:52:58.045", "ciclo": 5, "evento": "decision", "n_elegidos": 18, "prob_min": 0.9441, "prob_media": 0.9505}
+{"timestamp": "2026-10-18T20:52:58.050", "ciclo": 5, "evento": "accion", "n_enviados": 18, "n_alcanzados": 18}
+{"timestamp": "2026-10-18T20:52:58.058", "ciclo": 5, "evento": "critica", "n_alcanzados": 18, "brier": 0.3012, "sesgo_prob": 0.2838}
+{"timestamp": "2026-10-18T20:53:04.331", "ciclo": 5, "evento": "aprendizaje", "conversion": 0.6667, "reentrenado": true, "n_entrenamiento": 36251}

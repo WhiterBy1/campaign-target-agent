@@ -1,0 +1,30 @@
+15 escenarios x 5 repeticiones = 75 corridas
+
+== Por escenario ==
+id   tipo  repeticiones  M1_media  M1_sd  M2_media  M2_sd  M3_media  M3_sd  M5_media  M6_media  ciclos_ok_media errores M1_cumple M2_cumple M3_cumple M4_cumple  M5_cumple  M6_cumple prueba_nula_cumple
+N1 normal             5     2.097  0.028     0.804  0.002     0.625  0.004       1.0       1.0              5.0              True      True      True      True       True       True               None
+N2 normal             5     2.144  0.022     0.804  0.002     0.628  0.004       1.0       1.0              5.0              True      True      True      True       True       True               None
+N3 normal             5     3.479  0.030     0.803  0.002     0.447  0.003       1.0       1.0              5.0              None      True      None      None       True       True               None
+N4 normal             5     1.390  0.017     0.804  0.002     0.717  0.003       1.0       1.0              5.0              None      True      None      None       True       True               None
+N5 normal             5     2.135  0.054     0.804  0.001     0.625  0.009       1.0       1.0             10.0              True      True      True      True       True       True               None
+L1 limite             5     5.542  0.167     0.804  0.001     0.066  0.003       1.0       1.0              5.0              None      True      None      None       True       True               None
+L2 limite             5    -0.009  0.012     0.805  0.002     1.000  0.000       1.0       1.0              5.0              None      True      None      None       True       True               True
+L3 limite             5     2.135  0.085     0.803  0.001     0.625  0.003       1.0       1.0              5.0              True      True      True      True       True       True               None
+L4 limite             5     2.127  0.062     0.804  0.002     0.623  0.006       1.0       1.0             20.0              True      True      True      True       True       True               None
+F1  falla             5     1.955  0.449     0.805  0.002     0.625  0.005       1.0       1.0              5.0              None      None      None      None       True       True               None
+F2  falla             5     2.102  0.040     0.802  0.003     0.623  0.003       1.0       1.0              4.0              None      None      None      None       True       True               None
+F3  falla             5     2.102  0.040     0.802  0.003     0.623  0.003       1.0       1.0              4.0              None      None      None      None       True       True               None
+F4  falla             5     2.102  0.040     0.802  0.003     0.623  0.003       1.0       1.0              4.0              None      None      None      None       True       True               None
+F5  falla             5       NaN    NaN     0.803  0.000     0.626  0.001       1.0       1.0              5.0              None      None      None      None       True       True               None
+F6  falla             5     2.102  0.040     0.802  0.003     0.623  0.003       1.0       1.0              4.0              None      None      None      None       True       True               None
+
+== Tabla de resultados ==
+                                                                             medida  umbral  casos_ejecutados                                       resultado escenarios_que_cumplen  cumple
+                            M1 Mejora de conversion al contactar el 20 % priorizado  >= 0.2                25 media 2.128 (sd 0.053; min por escenario 2.097)                    5/5    True
+                                          M2 Calidad del ranking (AUC-ROC por lote) >= 0.75                45 media 0.804 (sd 0.002; min por escenario 0.803)                    9/9    True
+                                      M3 Captura de compradores en el 20 % superior  >= 0.5                25 media 0.625 (sd 0.005; min por escenario 0.623)                    5/5    True
+                                     M4 Estabilidad de la mejora entre repeticiones  <= 0.1                25                      sd media 0.050 (max 0.085)                    5/5    True
+                                                    M5 Registro completo y ordenado  >= 1.0                75 media 1.000 (sd 0.000; min por escenario 1.000)                  15/15    True
+M6 Robustez ante entradas invalidas y entorno adverso (medida anadida en la Fase 3)  >= 1.0                75 media 1.000 (sd 0.000; min por escenario 1.000)                  15/15    True
+
+Resumen: {"ejecutado_en": "2026-10-18T20:48:45", "duracion_s": 496, "umbrales_sha256": "d62b12376c46b743345facc6d9b711cb6dd3d007c19567987d2fb2dfe3ddd800", "umbrales_fijados_en": "2026-10-18T20:46:30-05:00", "python": "3.12.10", "sklearn": "1.9.1", "pandas": "3.0.6", "numpy": "2.5.4", "so": "Windows-11-10.0.26200-SP0", "corridas": 75, "logs": 75}

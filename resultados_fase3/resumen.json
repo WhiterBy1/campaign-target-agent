@@ -1,0 +1,13 @@
+{
+  "ejecutado_en": "2026-10-18T20:48:45",
+  "duracion_s": 496,
+  "umbrales_sha256": "d62b12376c46b743345facc6d9b711cb6dd3d007c19567987d2fb2dfe3ddd800",
+  "umbrales_fijados_en": "2026-10-18T20:46:30-05:00",
+  "python": "3.12.10",
+  "sklearn": "1.9.1",
+  "pandas": "3.0.6",
+  "numpy": "2.5.4",
+  "so": "Windows-11-10.0.26200-SP0",
+  "corridas": 75,
+  "logs": 75
+}

@@ -1,0 +1,32 @@
+{
+  "_nota": "Umbrales, escenarios y reglas de aplicabilidad fijados ANTES de ejecutar pruebas_fase3.py. No editar despues de correr las pruebas: el hash SHA-256 de este archivo queda registrado en resultados_fase3/resumen.json.",
+  "fijado_en": "2026-10-18T20:46:30-05:00",
+  "repeticiones": 5,
+  "semillas": [1, 2, 3, 4, 5],
+  "medidas": {
+    "M1": {"nombre": "Mejora de conversion al contactar el 20 % priorizado", "formula": "conv_agente / conv_base - 1; conv_agente = compradores / clientes alcanzados de la lista; conv_base = tasa de compra del lote completo", "umbral": 0.20, "regla": ">=", "aplica": "escenarios normales y limite con frac = 0.20"},
+    "M2": {"nombre": "Calidad del ranking (AUC-ROC por lote)", "formula": "media de roc_auc_score(y_real, prob) sobre los lotes aceptados con ambas clases", "umbral": 0.75, "regla": ">=", "aplica": "escenarios normales y limite (cualquier frac)"},
+    "M3": {"nombre": "Captura de compradores en el 20 % superior", "formula": "media por lote de compradores_en_lista / compradores_en_lote", "umbral": 0.50, "regla": ">=", "aplica": "escenarios normales y limite con frac = 0.20"},
+    "M4": {"nombre": "Estabilidad de la mejora entre repeticiones", "formula": "desviacion estandar de M1 entre las 5 repeticiones", "umbral": 0.10, "regla": "<=", "aplica": "mismos escenarios que M1"},
+    "M5": {"nombre": "Registro completo y ordenado", "formula": "ciclos con la secuencia de eventos esperada y marcas de tiempo no decrecientes / ciclos procesados (ok: percepcion, decision, accion, critica, aprendizaje; rechazado: percepcion, rechazo)", "umbral": 1.0, "regla": ">=", "aplica": "todos los escenarios"},
+    "M6": {"nombre": "Robustez ante entradas invalidas y entorno adverso (medida anadida en la Fase 3)", "formula": "ciclos terminados de forma controlada y correcta / ciclos totales; correcto = lote con dano inyectado rechazado y registrado, o lote sano procesado sin excepcion no manejada", "umbral": 1.0, "regla": ">=", "aplica": "todos los escenarios"}
+  },
+  "prueba_nula_L2": {"descripcion": "Con frac = 1.0 se contacta a todos: no hay priorizacion, la mejora debe ser ~0", "criterio": "|M1| <= 0.05"},
+  "escenarios": [
+    {"id": "N1", "tipo": "normal", "descripcion": "Operacion de diseno: 20 %, 10 % de fallo, 5 tandas", "frac": 0.20, "fallo": 0.10, "tandas": 5},
+    {"id": "N2", "tipo": "normal", "descripcion": "Sin contactos fallidos", "frac": 0.20, "fallo": 0.00, "tandas": 5},
+    {"id": "N3", "tipo": "normal", "descripcion": "Contactar solo el 10 %", "frac": 0.10, "fallo": 0.10, "tandas": 5},
+    {"id": "N4", "tipo": "normal", "descripcion": "Contactar el 30 %", "frac": 0.30, "fallo": 0.10, "tandas": 5},
+    {"id": "N5", "tipo": "normal", "descripcion": "10 tandas (mas ciclos de aprendizaje)", "frac": 0.20, "fallo": 0.10, "tandas": 10},
+    {"id": "L1", "tipo": "limite", "descripcion": "Contactar solo el 1 %", "frac": 0.01, "fallo": 0.10, "tandas": 5},
+    {"id": "L2", "tipo": "limite", "descripcion": "Contactar al 100 % (prueba nula, sin priorizacion)", "frac": 1.00, "fallo": 0.10, "tandas": 5},
+    {"id": "L3", "tipo": "limite", "descripcion": "50 % de contactos fallidos", "frac": 0.20, "fallo": 0.50, "tandas": 5},
+    {"id": "L4", "tipo": "limite", "descripcion": "20 tandas de ~450 clientes", "frac": 0.20, "fallo": 0.10, "tandas": 20},
+    {"id": "F1", "tipo": "falla", "descripcion": "Entorno adverso: 90 % de contactos fallidos", "frac": 0.20, "fallo": 0.90, "tandas": 5},
+    {"id": "F2", "tipo": "falla", "descripcion": "Lote 2 sin la columna balance", "frac": 0.20, "fallo": 0.10, "tandas": 5, "dano": "sin_columna"},
+    {"id": "F3", "tipo": "falla", "descripcion": "Lote 2 con balance sin dato (todo NaN)", "frac": 0.20, "fallo": 0.10, "tandas": 5, "dano": "con_nan"},
+    {"id": "F4", "tipo": "falla", "descripcion": "Lote 2 vacio", "frac": 0.20, "fallo": 0.10, "tandas": 5, "dano": "vacio"},
+    {"id": "F5", "tipo": "falla", "descripcion": "Nadie es alcanzado (100 % de fallo)", "frac": 0.20, "fallo": 1.00, "tandas": 5},
+    {"id": "F6", "tipo": "falla", "descripcion": "Lote 2 con balance como texto", "frac": 0.20, "fallo": 0.10, "tandas": 5, "dano": "balance_texto"}
+  ]
+}
